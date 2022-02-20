@@ -1,1 +1,1 @@
-A collection of Linux scripts that I use.
+A collection of Linux (and not only) scripts that I use.
