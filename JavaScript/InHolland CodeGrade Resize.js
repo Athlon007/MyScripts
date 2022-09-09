@@ -2,7 +2,7 @@
 // @name         InHolland CodeGrade Resize
 // @namespace    Athlon/InHolland
 // @version      1.0.1
-// @description  Resizez InHolland CodeGrade window to be larger
+// @description  Resizes InHolland CodeGrade window to be larger
 // @author       Athlon
 // @include      *moodle.inholland.nl/mod/lti/view.php?id=*
 // @run-at       document-end
