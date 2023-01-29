@@ -13,7 +13,8 @@ window.addEventListener('load', function () {
     const imgLang = btnSwitchLanguage.children[1].src;
     const srcLangEng = "/cs/CS92PRD/cache/IH_UK_FLAG_24_DUT_1.PNG";
 
-    if (imgLang === srcLangEng) {
+    // Check if flag is UK. If so, click tbe button.
+    if (imgLang.includes(srcLangEng)) {
         btnSwitchLanguage.click();
     }
-}
+});
