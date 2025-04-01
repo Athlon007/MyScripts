@@ -1,6 +1,10 @@
 #!/usr/bin/python3
 """
 A script to renew the GSLT token for an Unturned server.
+
+Remember to setup following environmental variables:
+- STEAM_WEBAPI_KEY - your Steam web API key (grab it here: https://steamcommunity.com/dev/apikey)
+- UNTURNED_CONFIG_JSON_PATH - where your server's Config.json is located (ex. /home/container/Servers/unturned/Config.json)
 """
 
 import os
@@ -74,8 +78,7 @@ def main():
     The main function
     """
     # get steam webapi key
-    config = get_config()
-    steam_webapi_key = config['steam_webapi_key']
+    steam_webapi_key = os.getenv('STEAM_WEBAPI_KEY')
     requester = Requester(steam_webapi_key)
 
     # print accounts list
@@ -101,7 +104,7 @@ def main():
         token_response = gsi.reset_login_token(unturned_account['steamid'])
         login_token = token_response['response']['login_token']
 
-        unturned_config_path = config['unturned_config_path']
+        unturned_config_path = os.getenv('UNTURNED_CONFIG_JSON_PATH')
 
         # Load the Unturned's server config
         with open(unturned_config_path, 'r', encoding='UTF-8') as server_config_file:
